@@ -9,37 +9,53 @@
 ├── VERSION                     # 当前语义化版本号
 ├── docs/
 │   ├── app-list.md             # 软件清单正文，单一事实来源
+│   ├── installed-apps.md       # 多设备合并的应用安装元数据归档
 │   └── maintenance.md          # 本维护规范
 └── scripts/
-    └── scan-macos-apps.sh      # 本机应用扫描脚本
+    └── scan-macos-apps.sh      # 当前设备应用扫描脚本
 ```
 
 ## 更新流程
 
-1. 扫描本机应用：
+1. 扫描当前设备应用并查看 TSV 结果：
 
    ```bash
-   bash scripts/scan-macos-apps.sh
+   bash scripts/scan-macos-apps.sh --format tsv
    ```
 
-   如需附带 Homebrew Cask 列表：
+   如需生成 Markdown 原始报告：
 
    ```bash
-   bash scripts/scan-macos-apps.sh --with-brew
+   bash scripts/scan-macos-apps.sh --report /tmp/installed-apps-scan.md
    ```
 
-2. 只修改 `docs/app-list.md` 中的清单内容，避免在 README 中重复维护。
+   扫描范围包括 `/Applications`、`~/Applications` 及其一层子目录。脚本只读取 `Info.plist`、签名和安装位置，不复制应用本体或用户数据。扫描结果只代表当前设备快照。
 
-3. 更新 `VERSION`，并在 `CHANGELOG.md` 的 `[Unreleased]` 或新版本章节记录变化。
+2. 将扫描结果合并到 `docs/installed-apps.md`：
 
-4. 提交前检查：
+   - 按 Bundle ID 优先、应用名称兜底去重，每个应用只保留一行。
+   - 使用多设备并集合并：新增当前设备记录，同时保留既有其他设备记录。
+   - 当前设备未扫描到不等于卸载，不得删除既有记录或清除 `✅`。
+   - 保留人工维护的分类、设备来源、备注和异常说明，不直接用原始报告覆盖归档。
+   - 建议为每条记录标明设备来源；无法确认来源时保留原记录并在备注中说明。
+   - 只记录元数据，不提交 `.app`、DMG、PKG、应用图标或用户数据。
+   - 签名异常、Ad-hoc 分发和 Gatekeeper 拒绝项需在备注中标明。
+
+3. 同步 `docs/app-list.md` 中的安装状态和速览表。安装状态按所有已登记设备的并集维护；推荐清单中的未安装条目继续保留，不做删除。
+
+4. 更新 `VERSION`，并在 `CHANGELOG.md` 的 `[Unreleased]` 或新版本章节记录变化。
+
+5. 提交前检查：
 
    ```bash
    git diff --check
    bash -n scripts/scan-macos-apps.sh
+   bash scripts/scan-macos-apps.sh --format tsv
    ```
 
-5. 发布版本时：
+   同时核对当前设备扫描行数、多设备去重总数、其他设备记录是否完整，以及推荐清单条目是否减少。
+
+6. 发布版本时：
 
    ```bash
    git add .

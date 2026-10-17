@@ -4,21 +4,23 @@
 
 > 2026 年整理，只推荐真正好用的。免费优先，付费值得的也列。
 > 每个软件标明：🆓免费 / 💰付费 / 🔓开源
-> ✅ 表示 2026-09-28 扫描本机 `/Applications` 时已安装。
+> ✅ 表示至少一台已登记设备安装过；当前设备未扫描到不会移除标记。
 
-## 📦 本机已安装速览（2026-09-28）
+## 📦 多设备已安装速览（截至 2026-10-18）
 
-> 按当前 Mac 的 `/Applications` 扫描整理，不包含 Safari 等系统自带应用；下方推荐清单中的已安装项标 ✅。
+> 由已有安装清单与 2026-10-18 当前设备复扫（含 2026-10-17 初次扫描）合并，按应用名称和 Bundle ID 去重，共 53 条应用记录（含 1 个卸载辅助程序）。
+> 完整版本、Bundle ID、来源和签名信息见 [应用安装归档](installed-apps.md)；当前设备未安装或未扫描到的条目继续保留，不据此判定卸载。
 
-| 分类 | 已安装应用 |
-|---|---|
-| 开发 | Android Studio、CC Switch、Cline、Ghostty、Kaku、OpenChamber、OrbStack、Ports、Trae CN、Transporter、VS Code、Xcode、ZCode、微信开发者工具 |
-| AI / 知识 | Bloome、ChatGPT、Cherry Studio、Obsidian、Reasonix |
-| 系统 / 效率 | BetterDisplay、Keka、Macs Fan Control、MonitorControl、Snipaste、Stats、uTools |
-| 网络 / 通讯 | FlClash、Google Chrome、LocalSend、Microsoft Edge、OpenVPN Connect、WeChat、研发云SDP、zerotrust-client、云脉（Yunmai） |
-| 办公 / 媒体 | NeteaseMusic、ONLYOFFICE |
+| 分类 | 数量 | 已登记安装应用 |
+|---|---:|---|
+| 开发与 AI 编程 | 25 | Antigravity、Android Studio、CC Switch、ChatGPT、Claude、Cline、Cumora、DeepSeek Harness、Ghostty、Kaku、LobeHub、Netcatty、OpenChamber、OrbStack、Orca、PortHawk、Ports、Qoder、Reasonix、Trae CN、Transporter、VS Code、wechatwebdevtools、Xcode、ZCode |
+| AI / 知识 / 效率 | 5 | Bloome、magpie、Nowledge Mem、Obsidian、uTools |
+| 系统与网络 | 12 | BetterDisplay、FlClash、Keka、LocalSend、Macs Fan Control、Microsoft Edge、MonitorControl、OpenVPN Connect、Pulse、Stats、zerotrust-client、云脉（Yunmai） |
+| 通讯与办公 | 6 | Cherry Studio、ONLYOFFICE、Telegram、WeChat、WorkBuddy、研发云SDP |
+| 媒体与工具 | 3 | Google Chrome、网易云音乐、Snipaste |
+| 独立应用目录 / 卸载辅助 | 2 | Hopper Disassembler、Uninstall OpenVPN Connect |
 
-> Homebrew 还登记了 AionUi、Input Source Pro、OpenInTerminal、PortKiller、LibreOffice、Warp，但当前 `/Applications` 中没有对应应用包，暂不标记为已安装。
+> Homebrew Cask 版本、安装来源和签名异常统一记录在 [应用安装归档](installed-apps.md)。
 
 ---
 
@@ -148,7 +150,7 @@
 **ChatGPT Mac** ✅ — OpenAI 官方桌面端，对话 + 桌面集成
 🆓免费基础版 / Plus $20/月 | https://openai.com/chatgpt/mac
 
-**Claude Mac** — Anthropic 桌面客户端，深度工作的 AI 助手
+**Claude Mac** ✅ — Anthropic 桌面客户端，深度工作的 AI 助手
 🆓免费基础版 / Pro $20/月 | https://claude.ai/download
 
 **Cherry Studio** ✅ — 多 LLM 桌面客户端（GPT/Claude/Gemini/Ollama 全支持）
@@ -331,10 +333,10 @@
 **内容创作者：** CleanShot X | Screen Studio | DaVinci Resolve | Eagle
 **写作/笔记：** Obsidian | Typora | Craft
 **省钱党全免费：** Zed | Ghostty | Stats | Pearcleaner | IINA | Maccy | Ice | Kap
-**本机当前开发组合：** VS Code | Xcode | Ghostty / Kaku | OrbStack | Cline | Trae CN | ZCode | OpenChamber
+**已登记开发组合（合并）：** VS Code | Xcode | Ghostty / Kaku | OrbStack | Cline | Trae CN | ZCode | OpenChamber | CC Switch
 
 ---
 
-*清单版本：v2.1.0*
-*最后更新：2026年9月28日*
-*数据来源：awesome-mac (103k⭐) + 社区口碑筛选 + 本机 `/Applications` 扫描*
+*清单版本：v2.2.0*
+*最后更新：2026年10月18日*
+*数据来源：awesome-mac (103k⭐) + 社区口碑筛选 + 多设备安装清单 + 当前设备应用扫描*
